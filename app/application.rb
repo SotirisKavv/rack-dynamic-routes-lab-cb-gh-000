@@ -5,7 +5,7 @@ class Application
 
     if req.path.match(/items/)
       if @@items.include? req.path.split(/items/).last
-        resp.write req.path.split(/items/).last.price
+        resp.write "#{req.path.split(/items/).last.price}"
       else
         resp.write "Item not found"
         resp.status = 400
